@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment — The Cut Hut Salon</title>
+  <meta name="description" content="Book your appointment at The Cut Hut Salon in Ogden, UT. Walk-ins always welcome. Call (801) 334-0999 or submit a booking request online.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="https://www.cuthutsalon.com/wp-content/uploads/2018/12/ch-logo-01.png" alt="The Cut Hut Salon Logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="book.html" class="nav-cta active">Book Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+  <a href="book.html" class="nav-cta active">Book Now</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>Book Your Appointment</h1>
+  <p>Walk-ins always welcome — or reserve your spot by calling or submitting a request below.</p>
+</div>
+
+<!-- QUICK CONTACT BAR -->
+<div style="background:var(--color-primary);color:white;padding:1.5rem 1.5rem;text-align:center;">
+  <p style="font-size:1.1rem;font-weight:600;">
+    📞 Easiest way to book:&nbsp;
+    <a href="tel:+18013340999" style="color:var(--color-accent);font-size:1.3rem;font-weight:700;">(801) 334-0999</a>
+    &nbsp;— Mon–Fri 9am–7pm, Sat 9am–5pm
+  </p>
+</div>
+
+<!-- BOOKING SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="align-items:start; gap:3rem;">
+
+      <!-- FORM -->
+      <div class="reveal">
+        <span class="section-label">Request an Appointment</span>
+        <h2 class="section-title" style="margin-bottom:0.75rem;">Tell Us About Your Visit</h2>
+        <p style="color:var(--color-text-light);margin-bottom:2rem;">Fill out the form and we'll confirm your appointment by phone. For color and specialty services, calling ahead is recommended.</p>
+
+        <form class="contact-form" id="booking-form" novalidate>
+          <div class="grid-2" style="gap:1rem;">
+            <div class="form-group">
+              <label for="fname">First Name *</label>
+              <input type="text" id="fname" name="fname" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name *</label>
+              <input type="text" id="lname" name="lname" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="(801) 555-1234" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@email.com">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Requested *</label>
+            <select id="service" name="service" required>
+              <option value="">— Select a service —</option>
+              <option value="haircut">Haircut (Men / Women)</option>
+              <option value="kids-cut">Children's Haircut (12 &amp; under)</option>
+              <option value="senior-cut">Senior Haircut (60+)</option>
+              <option value="buzz">Buzz Cut</option>
+              <option value="color-women">Women's Color</option>
+              <option value="color-men">Men's Color</option>
+              <option value="highlights">Highlights / Weave</option>
+              <option value="double-process">Double Process / Color Correction</option>
+              <option value="perm">Perm</option>
+              <option value="styling">Shampoo &amp; Style</option>
+              <option value="waxing">Waxing</option>
+              <option value="treatment">Deep Conditioning / Treatment</option>
+              <option value="other">Other — I'll explain below</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stylist">Preferred Stylist</label>
+            <select id="stylist" name="stylist">
+              <option value="any">No preference — any available</option>
+              <option value="megan">Megan</option>
+              <option value="deni">Deni</option>
+              <option value="lydia">Lydia</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="preferred-date">Preferred Date</label>
+            <input type="date" id="preferred-date" name="preferred-date">
+          </div>
+          <div class="form-group">
+            <label for="preferred-time">Preferred Time</label>
+            <select id="preferred-time" name="preferred-time">
+              <option value="">— Select a time —</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+              <option>6:00 PM (Mon–Fri only)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" placeholder="Any special requests, hair concerns, or details to know before your visit..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;font-size:1rem;">
+            Submit Booking Request
+          </button>
+          <p style="font-size:0.82rem;color:var(--color-text-light);margin-top:1rem;text-align:center;">
+            We'll call you to confirm. Walk-ins always welcome — no request needed!
+          </p>
+        </form>
+
+        <!-- Success message -->
+        <div id="form-success" style="display:none;background:var(--color-bg2);border:2px solid var(--color-primary);border-radius:var(--radius-lg);padding:2rem;text-align:center;margin-top:1rem;">
+          <div style="font-size:2.5rem;margin-bottom:0.75rem;">💜</div>
+          <h3 style="font-family:var(--font-heading);color:var(--color-primary);margin-bottom:0.5rem;">Request Received!</h3>
+          <p style="color:var(--color-text-light);">Thank you! We'll call you at the number you provided to confirm your appointment. See you soon at The Cut Hut!</p>
+        </div>
+      </div>
+
+      <!-- SIDEBAR INFO -->
+      <div>
+        <!-- Hours -->
+        <div class="info-card reveal" style="margin-bottom:1.5rem;">
+          <h3 style="font-family:var(--font-heading);color:var(--color-primary);margin-bottom:1.25rem;font-size:1.2rem;">🕐 Salon Hours</h3>
+          <table class="hours-table">
+            <tr><td>Monday</td><td>9:00 AM – 7:00 PM</td></tr>
+            <tr><td>Tuesday</td><td>9:00 AM – 7:00 PM</td></tr>
+            <tr><td>Wednesday</td><td>9:00 AM – 7:00 PM</td></tr>
+            <tr><td>Thursday</td><td>9:00 AM – 7:00 PM</td></tr>
+            <tr><td>Friday</td><td>9:00 AM – 7:00 PM</td></tr>
+            <tr><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="info-card reveal reveal-delay-1" style="margin-bottom:1.5rem;">
+          <h3 style="font-family:var(--font-heading);color:var(--color-primary);margin-bottom:1.25rem;font-size:1.2rem;">📍 Find Us</h3>
+          <div class="info-row">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-label">Address</div>
+              <div class="info-value">2072 Harrison Blvd<br>Ogden, UT 84401</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div>
+              <div class="info-label">Call Us</div>
+              <div class="info-value"><a href="tel:+18013340999">(801) 334-0999</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📘</div>
+            <div>
+              <div class="info-label">Facebook</div>
+              <div class="info-value"><a href="https://www.facebook.com/people/The-Cut-Hut-Ogden/100069786982089/" target="_blank" rel="noopener">The Cut Hut Ogden</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📸</div>
+            <div>
+              <div class="info-label">Instagram</div>
+              <div class="info-value"><a href="https://www.instagram.com/thecuthutsalon/" target="_blank" rel="noopener">@thecuthutsalon</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="reveal reveal-delay-2" style="background:var(--color-bg2);border-radius:var(--radius-lg);padding:1.5rem;">
+          <h4 style="font-family:var(--font-heading);color:var(--color-primary);margin-bottom:1rem;">💡 Good to Know</h4>
+          <ul style="display:grid;gap:0.6rem;">
+            <li style="display:flex;gap:0.5rem;font-size:0.9rem;color:var(--color-text-light);">
+              <span>✅</span><span>Walk-ins always welcome for cuts &amp; trims</span>
+            </li>
+            <li style="display:flex;gap:0.5rem;font-size:0.9rem;color:var(--color-text-light);">
+              <span>📞</span><span>Call ahead for color, perms &amp; specialty services</span>
+            </li>
+            <li style="display:flex;gap:0.5rem;font-size:0.9rem;color:var(--color-text-light);">
+              <span>💜</span><span>Tips not included in listed prices</span>
+            </li>
+            <li style="display:flex;gap:0.5rem;font-size:0.9rem;color:var(--color-text-light);">
+              <span>🖼️</span><span>Bring reference photos — our stylists love seeing your vision</span>
+            </li>
+            <li style="display:flex;gap:0.5rem;font-size:0.9rem;color:var(--color-text-light);">
+              <span>🧴</span><span>Olaplex &amp; deep conditioning add-ons available</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Map -->
+        <div class="map-embed reveal reveal-delay-3" style="margin-top:1.5rem;">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts&q=The+Cut+Hut+Salon,2072+Harrison+Blvd,Ogden,UT+84401"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="The Cut Hut Salon map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <img src="https://www.cuthutsalon.com/wp-content/uploads/2018/12/ch-logo-01.png" alt="The Cut Hut Salon">
+      </div>
+      <p class="footer-tagline">Ogden's #1 Beauty Salon — serving families on Harrison Blvd.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/people/The-Cut-Hut-Ogden/100069786982089/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/thecuthutsalon/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="services.html">Haircuts</a>
+      <a href="services.html">Color Services</a>
+      <a href="services.html">Perms</a>
+      <a href="services.html">Waxing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Salon</h4>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="book.html">Book Now</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>2072 Harrison Blvd<br>Ogden, UT 84401</p>
+      <a href="tel:+18013340999">(801) 334-0999</a>
+      <p style="margin-top:0.5rem;">Mon–Fri: 9am–7pm<br>Sat: 9am–5pm</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 The Cut Hut Salon. All rights reserved. | 2072 Harrison Blvd, Ogden, UT 84401</p>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Form submission
+document.getElementById('booking-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  document.getElementById('booking-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+});
+
+// Set minimum date to today
+const dateInput = document.getElementById('preferred-date');
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+}
+</script>
+</body>
+</html>
