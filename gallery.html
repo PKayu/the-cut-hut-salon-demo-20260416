@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — The Cut Hut Salon</title>
+  <meta name="description" content="See the work of The Cut Hut Salon stylists in Ogden, UT. Hair cuts, color, perms and styling for the whole family.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .masonry-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .masonry-gallery .tall { grid-row: span 2; }
+    .gallery-item {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+      min-height: 200px;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(44,27,62,0.6) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.25rem;
+    }
+    .gallery-item:hover .overlay { opacity: 1; }
+    .overlay span {
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      .masonry-gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .masonry-gallery .tall { grid-row: span 2; }
+      .gallery-item img { min-height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="https://www.cuthutsalon.com/wp-content/uploads/2018/12/ch-logo-01.png" alt="The Cut Hut Salon Logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="book.html" class="nav-cta">Book Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html" class="active">Gallery</a>
+  <a href="about.html">About</a>
+  <a href="book.html" class="nav-cta">Book Now</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>Our Gallery</h1>
+  <p>A look inside The Cut Hut — our salon, our team, and the results we're proud of.</p>
+</div>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:3rem;">
+      <span class="section-label">Fresh Cuts &amp; Great Vibes</span>
+      <h2 class="section-title">See The Cut Hut in Action</h2>
+      <p class="section-subtitle">Real photos from our salon on Harrison Blvd in Ogden, UT.</p>
+    </div>
+
+    <div class="masonry-gallery">
+      <div class="gallery-item tall reveal" style="min-height:440px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1200&photo_reference=AU_ZVEG9sfUs_B7Rg4LlltpPK8Cz5YX3c7GLmFiUfzL1B1Frm9EPdvzDT5FZjhTH0JwTQBweJaTlkUupU2u24WSGVy1XNGP8vUXI9ntWMBwwKy3O-qV9cctJ5bM-8yINzSFosPPnc943Dl6E_04Y_JAjip1h8RxpaSQWdxd1ap6pWzSz9hFS5VYvg5pV9xkq3ccTskAmmwL4IVlAG1qfJ2rvYWljXU7jAFWF6AT3JCJRvCRPPG0EojY-bcvbdn3Pvon_W0XkWe1HHWhFMciPRoY2e9em9NuJXbor2KD-X-KWZwnhUidVvytQ2TW_osl7WlaqlPgosJRH0ceGgXm7UtHGkh-WSkVGS1Cw07otceZlxcOZ34_m1ub4R-3of4WMyzONr21AG-Incp4AYxroPuneIehxTyfUsKPEqTuKfiDgxZusvw&key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts" alt="Salon interior">
+        <div class="overlay"><span>Our Salon</span></div>
+      </div>
+
+      <div class="gallery-item reveal reveal-delay-1" style="min-height:210px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHGmBdQotmJIFke6cXT7irvMW5oVRE4TaFtsSEFvBUqo165lBMGAnLuA4SKu6vMxaFar6ajB7zsoXiYh4Aec_si8I8F_FD25t049PVuuIvG3-B7iOvOPIuZ5JWkB1EHfnPyy2xYmbz9Sa8twM4qzBrInzc6xD0p3D3oBh2wXDVGM0OknlvHCgttFQGc2YvSFcpvB7Hr7BjjJSz0IXIcg_eKCia9wvOYaUOSOf7VW396GRHwnLnLYoXe0t1D_HUGAzWa2v7UgnhkISrzs9l_ZlpBAyf9LHeVq7yoZWsmxijiodrys5vyusmmFgpWFTGb0KP8PZOlUFnY4wzegv7GM999vfggUsQ2F4NMNGu633nGFO1BfP-nyfkaDMvW7UNp6ILM10-8k9GeG1FVRsBlPSIp4X6OufAozJgZeRrbJGs&key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts" alt="Styling work">
+        <div class="overlay"><span>Hair Styling</span></div>
+      </div>
+
+      <div class="gallery-item reveal reveal-delay-2" style="min-height:210px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHI7ZTBhXHpCxqlFvTL9SSixytJ2Jf5itTLM8hwKBc_b5CUU0HXSglVKrvnNYLe3M1UlRWfQU2Nj3fkias4VjKIpyEuk2km8MD43Od5_mBI3jfRQwXTO8pY22ko9fHCEc9yjqTm8ZhlSUuXLdywrsnuO7dcoNrPGJNG6KwkrGkhdeT1BahMjPHMuV6dP-BmpyaXO0Tvli62RJPAnPQzysUEgpmZ1ZcETaLYamBjXK2H91yPWxe6SvbFhh3tmlfxdiAGmK3RdY1nZxAlFcHCPOFT6JNp-ru-Jqx3BGRq69sHbV6QfOXUG69SJsIObO6h-oMlgIdjMZB4AvVFdgVss3y-hdIF5PcqqSRcQWhaizBICZawYRjifFiz4FtIfXQrtoYOabc4KGXUISB2igyOnJ84cW22g247JDoOilOxg-sQJuPAVx3E_pR3M5ll4K8j&key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts" alt="Haircut results">
+        <div class="overlay"><span>Haircut Results</span></div>
+      </div>
+
+      <div class="gallery-item reveal" style="min-height:210px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEGEdybGztbZZ7rYVL-dYlkPSk9ShdYEl9XZPKJtAAiaCVOQTyVhPAY0jZeryYWZPyjQGLUucImUPr1MGO-mlzRPRHws7EgykFq3jzVv_fgBCOe0p-q9ITcyWZ94wVltggk8KPqofSnH8oNuxql2Yy9BG8nRQiwjqmH0vF-J0KYSEwKyMo61H6Zl7fkSUCiwd-b1GiG0THXIk74iBREXN6B2VtLbx0Rf0owb2vaMvlmImkBdXsLvC_OU6lq49mB27or49Hh2SaSVAAfJJcPXVyBcMneDzFsRKdAMie7Akddrdi8E1IwsOPa8W7Zj3YPNDPxtqo0e8byoVlv-aH65ojxDCrO9xskO2c0cLDVodIYCurAVsEkGtYB8inyeaaQifDnF5W8-HE5Ji7eCcNE28kgy_uds_5U_Hy373M1K_C0R88M&key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts" alt="Color treatment">
+        <div class="overlay"><span>Color Services</span></div>
+      </div>
+
+      <div class="gallery-item reveal reveal-delay-1" style="min-height:210px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEG0Z7c4ygicS3xAMtehOpqDheD0jfl5J2wJdvYy7_pne025H5NLN4RGco9QTVTIbpDfx47dQFE6fhD6Ubah5Mf6oX4gvh-Cfs854STHQypljqL27Z07f8qLtv8X2nurDlMrxa6QC947O62y9qmO8N0_MazKhsURv5LvgRcNRlLqTy_iQpct9eEcPvZkHIk1EevslPFq8XjCPA50AE6y07dxyM026FoshJfjrJd1U4r2mvtfXC5oPcefeMS_MVenT5jNot3nR2stKzsE3fxJ3KGhzrlCY0YXbzzphaklv2fb7Bna1Vs45ZfVRGrYMG3gr-gBwWjIcUkL6WUZm4tkhHq2nHly_3TxfgnADDRhuHNG2b2EYGikFJ-HXTBcsZYoUjcINZMus4YRiZEXBs_3xOMEL8NWRQNzFP_AFIqygwIa7Q&key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts" alt="Salon atmosphere">
+        <div class="overlay"><span>Salon Atmosphere</span></div>
+      </div>
+
+      <div class="gallery-item tall reveal reveal-delay-2" style="min-height:440px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photo_reference=AU_ZVEH0jJP0qg363ffp7ce8XIhDfAOup-mrbUqstX162Dbm0F4u4x2SPESKtB17H1mek_BGGFnjJLNu4jReMCbRwasa0HPCQ6h36Kv3pK87r8nUYm--gNmcDKZstLQTxXEE2nrzvIdXi6m0W04e6UI9tR-BjwjCEE8kzkxfpmFyhnA7PYvJ9GfIClDb_Q3RW_R6Fn6k-cTOqhGm54k6uxNNqWb4X-Be7Rd3yt4Icv7bfMxUcarg_cA2B32Kda4kerbdT8YK63o59EKIUSZLm7-6uLlJP7QiMdWMG3ph3olkStwXQ7eKx9OBanIBzjw1THM9XBxyyaLG-6MM4hlGJNoJIhUhB67TAuSufAaQpkSJbBfVoDQKG4V04Xas8SFCjB1xdCZAx9do3a08QO3Jl9WFRAK0PDUV48bSm-e8iezj97nAow&key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts" alt="Inside the salon">
+        <div class="overlay"><span>Inside The Cut Hut</span></div>
+      </div>
+
+      <div class="gallery-item reveal" style="min-height:210px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHDwA2ftcTVWBlHyuJ0f8vnrZccO-BpiFjEJeooEWLJhCu1uEFQZgjVJkQTKI_OUSnqVscPR-1P1Ty5l77-OBT7k0egjMxymerO0giw6RroEy9KJxUUYY1g9aWlohAxdmLxGSu4oOBnwUIR_0bKoznKCjsohxR08reEXY3IgMLHTGJ6j6dMbMIxKWB62oVr_ft-Ojph90BstBXSVZdqqbzDn2zxHrb72A6o1V5E464fq71Nr6BZdWxLqNG6UlkYBRT4SVPIGeVrHWFQBhdXcJhhO4AS7mAiHoBBiihreV82Q8ybaXQWZYcWMtSWtKUnsE6mWWdYSM84A1tq4vmn1gBpZfJUq9-23W3cVLIUR478QzOQY1gIU6QENuAyzYsasfC4swQR5gOtdNtYxs-0RXEb_mV2bEB_fqtbNE09uY-9QJpq8Kj4TDYyJBN2ZY8h&key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts" alt="Stylist at work">
+        <div class="overlay"><span>Expert Stylists</span></div>
+      </div>
+
+      <div class="gallery-item reveal reveal-delay-1" style="min-height:210px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEHMqX2xjh4eYt_Dguusv7SlKV0Rzt3mBM1ngTCt3H5xEVagyD2hsivA_KhRmDOd6aKMZj0FELsLCP0j2izDWgROJWMQOQE6bqMJpePoK93nmie92D5HKsRtuGjtvNmGaopCsr-mgKUVGigCz5Z2d9w2J5XGi43MlSd71k6uVPva3df4bBKL59vvNqjsJ5Z75K-lcWQkS-lxYJk7gSBTfU4-1Bm_lcsLGyU1XCM15I4StYyQahdYjJiBYdFFUDJi3TnIek2gWWvbzAZxgpJMrZGMFCOsR9lueHP-7ey1b41mM-CkReD4vdd0n5G0dAEieu6KnfIR__lUgXQnpvyYDUcKhUGsDPmS7ITDJey9psCImB7egQgJ0jzc5f0OyLpI5fa30Feb2V__MGDAovTg7rnsIcZYnuK4w3JUIzxWGQQ0nIM&key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts" alt="Hair transformation">
+        <div class="overlay"><span>Transformations</span></div>
+      </div>
+
+      <div class="gallery-item reveal reveal-delay-2" style="min-height:210px;">
+        <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=AU_ZVEEgkYDq7Kk4y8N8P9g8MlAsheYlIfz1R01uRuA-UmMkvK9Vp5T09eVa6JAHFvq4k37zgFLygYZSQBiLW94YCjAUyS_hnbQGM2PRuc1rYem7BPBs2d-w-S_9iOkvq3RraQMZDoSVo5Nst0eKaEFV_NO9zrzF2PLZWn6yq78nB785bLWCQrVP5VvPSZladzsktGufBc5PmtCtFf1nCzMPG9kWdJ2y3XbnIfoRQ4sFkG9NGD8pTH0ky-Uv6GHUnRuU7N5qpXqJmdShuHukMwUaUnfuM15s8ba3RyGR5aD4R46_rWdPbJFz4fozuWzuVP78czmAEaC0low_HffftP8ZuPF3mqaXPQFjqigef2JoTYCOFbTRSxzrBpliJHJjhF42SCPjXfGrAhxYCa9oJArlvjaHKsrqvv--jfG_B6yrq-PKjw&key=AIzaSyDHy2hvJktkHKO5pfXkhJdqltlngdhf1ts" alt="Final style results">
+        <div class="overlay"><span>Beautiful Results</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM CTA -->
+<section class="section section-alt">
+  <div class="container" style="text-align:center;">
+    <div class="reveal">
+      <span class="section-label">Follow Along</span>
+      <h2 class="section-title">See More on Instagram</h2>
+      <p class="section-subtitle" style="margin:0 auto 2rem;">Follow <strong>@thecuthutsalon</strong> to see the latest cuts, colors, and salon updates.</p>
+      <a href="https://www.instagram.com/thecuthutsalon/" target="_blank" rel="noopener" class="btn btn-primary">
+        Follow @thecuthutsalon
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING CTA -->
+<section class="booking-section">
+  <div class="reveal">
+    <h2>Love What You See?</h2>
+    <p>Book your appointment today or just walk in — we're ready for you!</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="book.html" class="btn btn-outline" style="border-color:white;color:white;">Book Appointment</a>
+      <a href="tel:+18013340999" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.4);">📞 (801) 334-0999</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <img src="https://www.cuthutsalon.com/wp-content/uploads/2018/12/ch-logo-01.png" alt="The Cut Hut Salon">
+      </div>
+      <p class="footer-tagline">Ogden's #1 Beauty Salon — serving families on Harrison Blvd.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/people/The-Cut-Hut-Ogden/100069786982089/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/thecuthutsalon/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="services.html">Haircuts</a>
+      <a href="services.html">Color Services</a>
+      <a href="services.html">Perms</a>
+      <a href="services.html">Waxing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Salon</h4>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="book.html">Book Now</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>2072 Harrison Blvd<br>Ogden, UT 84401</p>
+      <a href="tel:+18013340999">(801) 334-0999</a>
+      <p style="margin-top:0.5rem;">Mon–Fri: 9am–7pm<br>Sat: 9am–5pm</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 The Cut Hut Salon. All rights reserved. | 2072 Harrison Blvd, Ogden, UT 84401</p>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
